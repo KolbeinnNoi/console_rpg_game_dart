@@ -1,6 +1,3 @@
-
-
-
 import 'dart:io';
 import 'dart:async';
 
@@ -10,7 +7,7 @@ import 'dart:async';
 Future<void> displayTextWithDelay(String filePath, Duration delay) async {
   final file = File(filePath);
 
-  // Check if the file exists otherwise print an error and return
+  // Check if the file exists otherwise print an error and
   if (!file.existsSync()) {
     print("Error: File not found at $filePath");
     return;

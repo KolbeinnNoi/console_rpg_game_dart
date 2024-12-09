@@ -1,1 +1,1 @@
-const String IntroFilePath = 'txt_files/intro.txt';
+const String IntroFilePath = 'txt_files/first_floor/intro.txt';
