@@ -1,0 +1,6 @@
+You inspect the walls closely. the scratches seem deliberate, almost as if someone or something was clawing at them in desperation.  
+as you trace your fingers over the marks, you notice they seem to form a pattern: three long scratches and two short ones, etched repeatedly in groups.
+
+it hits you—they form the number **32**.
+
+1. memorize the number and return to the entryway -> txt_files/first_floor/entryway.txt

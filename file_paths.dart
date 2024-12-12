@@ -1,1 +1,11 @@
-const String IntroFilePath = 'txt_files/first_floor/intro.txt';
+const String EntrywayFilePath = 'txt_files/first_floor/entryway.txt';
+const String ScratchMarksFilePath = 'txt_files/first_floor/scratch_marks.txt';
+const String LivingRoomFilePath = 'txt_files/first_floor/living_room.txt';
+const String TvRoomFilePath = 'txt_files/first_floor/tv_room.txt';
+const String TvOnFilePath = 'txt_files/first_floor/tv_on.txt';
+const String DollFilePath = 'txt_files/first_floor/doll.txt';
+const String KitchenFilePath = 'txt_files/first_floor/kitchen.txt';
+const String DarkHallwayFilePath = 'txt_files/first_floor/dark_hallway.txt';
+const String FridgeFilePath = 'txt_files/first_floor/fridge.txt';
+const String SinkFilePath = 'txt_files/first_floor/sink.txt';
+const String UnknownRoomFilePath = 'txt_files/first_floor/unknown_room.txt';

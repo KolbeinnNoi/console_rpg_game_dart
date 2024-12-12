@@ -1,0 +1,103 @@
+
+entrance hallway:
+
+dim lighting, creaky floorboards.
+a coat rack with a single dripping wet coat (it’s not raining).
+whispers or faint breathing as players move forward.
+clue etched on the mirror by the door: “you’ll need what’s broken to leave.”
+tv room (left):
+
+static-filled tv that turns off when approached. turn it back on, and you see distorted images of the house.
+creepy doll sitting on the couch, staring at the tv.
+puzzle: players need to tune the tv to a specific channel to reveal a number or phrase. the dial keeps skipping the correct station until they solve another room’s puzzle.
+fake scare: a shadow moves in the corner of the screen.
+kitchen (right):
+
+bloodied cutting board and a knife stuck in the table—knife is needed for a later puzzle.
+fridge hums loudly, then suddenly stops when opened. inside: rotten food and a severed hand clutching a key.
+stove burners turn on randomly, spooking players.
+locked pantry: opens later to reveal… something unpleasant.
+long dark hallway:
+
+dripping sound with no visible source.
+occasional loud bangs from the doors as they pass.
+faint shadow figures that flicker out of existence when approached.
+first door (straight ahead):
+
+small room with a decayed bed.
+painting on the wall with eyes that follow players.
+hidden drawer contains a cryptic note: “left is right, but right leads to ruin.”
+left door:
+
+storage room packed with old furniture and crates.
+puzzle: players need to clear debris to find an item (e.g., crowbar or screwdriver).
+faint crying that stops abruptly when investigated.
+right door (staircase):
+
+staircase is barely lit; feels precarious.
+as players approach, a loud sound like someone running upstairs occurs, but no one is there.
+ghostly face appears briefly in the window above the stairs.
+second straight door (past stairs):
+
+large, empty dining room with a long table.
+chairs are overturned, and a single plate sits at the head of the table.
+puzzle: place the knife from the kitchen and the key from the fridge on the plate to unlock a secret compartment.
+left door (from dining room):
+
+a bathroom with a shattered mirror.
+message written on the bathroom wall in reverse (must be read via mirror fragment): “it ends in the dark.”
+bathtub fills with blood if players stay too long.
+right door (from dining room):
+
+closet-sized space with a rocking chair.
+chair rocks slowly when approached but stops suddenly if players linger.
+item: a piece of paper with half a symbol drawn.
+overall note:
+
+scatter clues and scares to create a cohesive narrative—something happened in this house that players are piecing together.
+balance safe exploration areas with high-tension zones to keep players on edge.
+make sure progression flows: items from one room unlock or solve puzzles in others.
+this setup should give a spooky and interactive vibe with plenty of WTF moments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ok, the haunted house concept fits perfectly into the console rpg requirements from the assignment:
+
+difficulty level:
+
+keep it moderate for the 80% requirement: navigation, interactions, and one locked door needing a key.
+ramp up for the extra 20% by adding traps and puzzles.
+what to implement rn:
+
+navigation between rooms with clear descriptions.
+room-specific interactions: "pick up", "move", "break", "use".
+at least one locked door requiring the player to search other rooms for a key.
+bonus features for the 20%:
+
+trap room: make a room with a dangerous event (e.g., spikes) and require an item (e.g., a shield) to bypass.
+puzzle room: use clues hidden in earlier rooms. something like a code from a diary or book to unlock a safe.
+optional ASCII art for style points (employ simple graphics for room layouts).
+how hard it should be:
+navigation and keyfinding: straightforward but forces exploration. place misleading clues/items to fake complexity.
+trap and puzzle: make the trap solvable with logic (no RNG bs) and the puzzle require prior notes from earlier rooms.
+aim for players to fail or restart a couple of times but not ragequit.
+focus on clean code readability + docs too bc that’s like 50% of your grade lol.

@@ -1,3 +1,12 @@
-You are now standing in a small foyer, faint scratches can be seen on the walls with each flicker of the bulb.
+You're on your usual evening walk, the air sharp and cold, when a sudden scream cuts through the silence. It’s coming from a house you’ve never seen before... a house that feels off, like it doesn’t belong here.
+You step closer, your gut twisting. As you knock, the door creaks open on its own. A chill spills out from the darkness inside, pulling you forward.
+The moment you step inside, the door SLAMS shut behind you. Startled, you spin around. It’s gone—replaced by a blank wall.
+Your heart races. You shout for help, but the house swallows your voice. The scream? Gone. Silence presses in, broken only by the faint flicker of a single dim bulb.
+
+You are now standing in a tight, claustrophobic hallway about 2-3 meters long, faint scratches can be seen on the walls with each flicker of the bulb.
 With every step you take creaks can be heard from the floor.
 Ahead of you a door can be seen, but where does the door lead to ?
+
+
+1. open the door -> txt_files/first_floor/living_room.txt
+2. inspect the walls -> txt_files/first_floor/scratch_marks.txt

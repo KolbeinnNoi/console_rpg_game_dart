@@ -1,29 +1,46 @@
 import 'dart:io';
 import 'dart:async';
 
-
-// A function that makes the text output in bits instead of dumping it all at once in the console.
-// Feels more immersive this way I would say.
-Future<void> displayTextWithDelay(String filePath, Duration delay) async {
+Future<Map<int, Map<String, String>>> displayTextWithChoices(
+    String filePath, Duration delay, bool showDescription) async {
   final file = File(filePath);
 
-  // Check if the file exists otherwise print an error and
   if (!file.existsSync()) {
     print("Error: File not found at $filePath");
-    return;
+    return {};
   }
 
-  // This line of code reads through the textfile and replaces all line breaks and replaces them with a space and also removes any unwanted spaces
-  final text = file.readAsStringSync().replaceAll('\n', ' ').trim();
+  final lines = await file.readAsLines();
+  final List<String> sentences = [];
+  final Map<int, Map<String, String>> choices = {};
 
-  // This line of code breaks big sentences into smaller ones 
-  final List<String> sentences = text.split(RegExp(r'(?<=[.!?])\s+'));
-
-  // display each sentence with a delay
-  for (String sentence in sentences) {
-    if (sentence.trim().isNotEmpty) {
-      print(sentence.trim());
-      await Future.delayed(delay);
+  for (var line in lines) {
+    if (line.startsWith('1.') || line.startsWith('2.') || line.startsWith('3.')) {
+      final choiceParts = line.split('->');
+      if (choiceParts.length == 2) {
+        final choiceNumber = int.tryParse(line.substring(0, 1));
+        if (choiceNumber != null) {
+          choices[choiceNumber] = {
+            'text': choiceParts[0].substring(2).trim(),
+            'path': choiceParts[1].trim()
+          };
+        }
+      }
+    } else {
+      sentences.add(line);
     }
   }
+
+  // display room description only if showDescription is true
+  if (showDescription) {
+    for (var sentence in sentences) {
+      if (sentence.trim().isNotEmpty) {
+        print(sentence.trim());
+        await Future.delayed(delay);
+      }
+    }
+  }
+
+  return choices;
 }
+
