@@ -1,8 +1,0 @@
-you are now in the tv room, and the static-filled tv just turned off.
-there is a creepy doll sitting on the couch, staring at the tv.
-
-1. turn on the tv -> txt_files/first_floor/tv_on.txt
-2. check out the doll -> txt_files/first_floor/doll.txt
-3. open the cupboard under the tv -> txt_files/first_floor/cupboard.txt
-4. leave the tv room -> txt_files/first_floor/living_room.txt
-

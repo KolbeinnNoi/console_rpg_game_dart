@@ -24,7 +24,7 @@ void main() async {
 
     // display "you are now in..." for revisits
     if (isFirstVisit) {
-      print('${yellow}\nYou are now in ${getRoomName(currentRoom)}.${end}');
+      print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
     }
 
     // display text and options
@@ -36,7 +36,7 @@ void main() async {
     }
 
     // display choices
-    print('\nWhat do you want to do?');
+    print('${yellow}\nWhat do you want to do?${end}');
     choices.forEach((key, value) => print('$key. ${value['text']}'));
 
     // get player input
