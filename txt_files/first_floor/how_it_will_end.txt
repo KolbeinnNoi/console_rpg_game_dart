@@ -1,0 +1,4 @@
+// end the game
+// the player wakes up, realizing it was all a dream.
+// as they sit up, they notice an envelope in their hands.
+// inside the envelope is a piece of paper with the number "32" written in blood.

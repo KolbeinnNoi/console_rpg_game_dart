@@ -1,7 +1,7 @@
 const String EntrywayFilePath = 'txt_files/first_floor/entryway.txt';
 const String ScratchMarksFilePath = 'txt_files/first_floor/scratch_marks.txt';
 const String LivingRoomFilePath = 'txt_files/first_floor/living_room.txt';
-const String TvRoomFilePath = 'txt_files/first_floor/tv_room.txt';
+const String TvRoomFilePath = 'txt_files/first_floor/tv_room/tv_room.txt';
 const String TvOnFilePath = 'txt_files/first_floor/tv_on.txt';
 const String DollFilePath = 'txt_files/first_floor/doll.txt';
 const String KitchenFilePath = 'txt_files/first_floor/kitchen.txt';

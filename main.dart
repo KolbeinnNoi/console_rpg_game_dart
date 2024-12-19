@@ -37,11 +37,13 @@ void main() async {
 
     // display choices
     print('${yellow}\nWhat do you want to do?${end}');
+    print("----------------------------------------");
     choices.forEach((key, value) => print('$key. ${value['text']}'));
 
     // get player input
     final input = stdin.readLineSync();
     final choice = int.tryParse(input ?? '');
+    print("----------------------------------------");
 
     if (choice != null && choices.containsKey(choice)) {
       currentRoom = choices[choice]!['path']!;

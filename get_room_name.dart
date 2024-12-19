@@ -8,7 +8,7 @@ String getRoomName(String filePath) {
     TvRoomFilePath: 'the TV room',
     KitchenFilePath: 'the kitchen',
     DarkHallwayFilePath: 'the dark hallway',
-    // Add more rooms here
+    
   };
 
   return roomNames[filePath] ?? 'an unknown room';

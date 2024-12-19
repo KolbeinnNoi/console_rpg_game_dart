@@ -2,3 +2,5 @@ you turn on the tv, and the static clears.
 a haunting image of a dark figure appears, pointing to a cabinet below the tv.
 
 1. open the cupboard under the tv -> txt_files/first_floor/tv_room/tv_room_cupboard.txt
+2. check out the doll -> txt_files/first_floor/tv_room/tv_room_doll.txt
+3. leave the tv room -> txt_files/first_floor/living_room.txt
