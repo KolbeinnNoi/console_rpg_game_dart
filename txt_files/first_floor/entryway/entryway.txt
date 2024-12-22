@@ -9,4 +9,4 @@ Ahead of you a door can be seen, but where does the door lead to ?
 
 
 1. open the door -> txt_files/first_floor/living_room.txt
-2. inspect the walls -> txt_files/first_floor/scratch_marks.txt
+2. inspect the walls -> txt_files/first_floor/entryway/scratch_marks.txt

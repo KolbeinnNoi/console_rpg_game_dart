@@ -2,26 +2,34 @@ import 'file_paths.dart';
 
 
 String getRoomName(String filePath) {
+  // Base paths and room names
   final roomNames = {
     EntrywayFilePath: 'the entryway',
+    ScratchMarksFilePath: 'the entryway with scratch marks',
     LivingRoomFilePath: 'the living room',
     TvRoomFilePath: 'the TV room',
     KitchenFilePath: 'the kitchen',
     DarkHallwayFilePath: 'the dark hallway',
-    
   };
 
-  return roomNames[filePath] ?? 'an unknown room';
+  // Ensure sub-paths match their parent room
+  if (roomNames.containsKey(filePath)) {
+    return roomNames[filePath]!;
+  }
+
+  return '';
 }
 
 
-class ConsoleColors {
-  static const String reset = '\x1B[0m';
-  static const String red = '\x1B[31m';
-  static const String green = '\x1B[32m';
-  static const String yellow = '\x1B[33m';
-  static const String blue = '\x1B[34m';
-  static const String magenta = '\x1B[35m';
-  static const String cyan = '\x1B[36m';
-  static const String white = '\x1B[37m';
+bool isMainRoom(String filePath) {
+  // List of main room file paths
+  const mainRooms = [
+    EntrywayFilePath,
+    LivingRoomFilePath,
+    TvRoomFilePath,
+    KitchenFilePath,
+    DarkHallwayFilePath,
+  ];
+
+  return mainRooms.contains(filePath);
 }

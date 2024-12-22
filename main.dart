@@ -3,44 +3,40 @@ import 'file_paths.dart';
 import 'dart:io';
 import 'get_room_name.dart';
 import 'console_colors.dart';
-// void main() async {
-//   // Calls the intro text file
-//   await displayTextWithDelay(IntroFilePath, Duration(seconds: 4));
-  
-  
-  
-// }
+
 
 // void main() async {
 //   String currentRoom = EntrywayFilePath;
-//   Map<String, bool> visitedRooms = {};
+//   bool isIntro = true; // Flag to handle intro text differently
 
 //   while (true) {
-//     // check if room was visited before
-//     bool isFirstVisit = visitedRooms[currentRoom] ?? false;
-
-//     // mark the room as visited
-//     visitedRooms[currentRoom] = true;
-
-//     // display "you are now in..." for revisits
-//     if (isFirstVisit) {
+//     // Display the room name, but skip for the intro text
+//     if (!isIntro) {
 //       print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
+//       print("-----------------------------------------");
 //     }
 
-//     // display text and options
-//     final choices = await displayTextWithChoices(currentRoom, Duration(milliseconds: 50), !isFirstVisit);
+//     // Display text and options
+//     final choices = await displayTextWithChoices(
+//       currentRoom,
+//       Duration(milliseconds: 50),
+//       true
+//     );
+
+//     // Turn off the intro flag after the first room's text is displayed
+//     isIntro = false;
 
 //     if (choices.isEmpty) {
 //       print('No actions available. Game over.');
 //       break;
 //     }
 
-//     // display choices
+//     // Display choices
 //     print('${yellow}\nWhat do you want to do?${end}');
 //     print("----------------------------------------");
 //     choices.forEach((key, value) => print('$key. ${value['text']}'));
 
-//     // get player input
+//     // Get player input
 //     final input = stdin.readLineSync();
 //     final choice = int.tryParse(input ?? '');
 //     print("----------------------------------------");
@@ -56,12 +52,14 @@ import 'console_colors.dart';
 
 void main() async {
   String currentRoom = EntrywayFilePath;
-  bool isIntro = true; // Flag to handle intro text differently
+  bool isIntro = true; // Handle intro text separately
+  bool displayRoomName = true; // Controls whether to show "You are now in..."
 
   while (true) {
-    // Display the room name, but skip for the intro text
-    if (!isIntro) {
+    // Display the room name only for main room entries
+    if (!isIntro && displayRoomName) {
       print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
+      print("-----------------------------------------");
     }
 
     // Display text and options
@@ -71,7 +69,7 @@ void main() async {
       true
     );
 
-    // Turn off the intro flag after the first room's text is displayed
+    // After the intro, disable the intro flag
     isIntro = false;
 
     if (choices.isEmpty) {
@@ -82,7 +80,7 @@ void main() async {
     // Display choices
     print('${yellow}\nWhat do you want to do?${end}');
     print("----------------------------------------");
-    choices.forEach((key, value) => print('$key. ${value['text']}'));
+    choices.forEach((key, value) => print('${cyan}$key. ${value['text']}${end}'));
 
     // Get player input
     final input = stdin.readLineSync();
@@ -90,7 +88,10 @@ void main() async {
     print("----------------------------------------");
 
     if (choice != null && choices.containsKey(choice)) {
-      currentRoom = choices[choice]!['path']!;
+      // Update the currentRoom and determine if it is a main room
+      final nextRoom = choices[choice]!['path']!;
+      displayRoomName = isMainRoom(nextRoom); // Update display control
+      currentRoom = nextRoom;
     } else {
       print('Invalid choice. Try again.');
     }

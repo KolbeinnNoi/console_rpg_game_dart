@@ -3,4 +3,4 @@ as you trace your fingers over the marks, you notice they seem to form a pattern
 
 it hits you—they form the number **32**.
 
-1. memorize the number and return to the entryway -> txt_files/first_floor/entryway.txt
+1. memorize the number and return to the entryway -> txt_files/first_floor/entryway/entryway.txt
