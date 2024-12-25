@@ -3,28 +3,32 @@ import 'file_paths.dart';
 import 'dart:io';
 import 'get_room_name.dart';
 import 'console_colors.dart';
-
+import 'handle_lockbox_code.dart';
 
 // void main() async {
 //   String currentRoom = EntrywayFilePath;
-//   bool isIntro = true; // Flag to handle intro text differently
+//   bool isIntro = true; // Handle intro text separately
+//   Map<String, bool> visitedRooms = {}; // Tracks if a room has been visited
 
 //   while (true) {
-//     // Display the room name, but skip for the intro text
-//     if (!isIntro) {
+//     // Check if the room has been visited before
+//     bool isFirstVisit = !(visitedRooms[currentRoom] ?? false);
+
+//     // Mark the room as visited
+//     visitedRooms[currentRoom] = true;
+
+//     // Display the room name only for main room entries
+//     if (!isFirstVisit) {
 //       print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
 //       print("-----------------------------------------");
 //     }
 
-//     // Display text and options
+//     // Display room description only on the first visit
 //     final choices = await displayTextWithChoices(
 //       currentRoom,
 //       Duration(milliseconds: 50),
-//       true
+//       isFirstVisit
 //     );
-
-//     // Turn off the intro flag after the first room's text is displayed
-//     isIntro = false;
 
 //     if (choices.isEmpty) {
 //       print('No actions available. Game over.');
@@ -34,7 +38,7 @@ import 'console_colors.dart';
 //     // Display choices
 //     print('${yellow}\nWhat do you want to do?${end}');
 //     print("----------------------------------------");
-//     choices.forEach((key, value) => print('$key. ${value['text']}'));
+//     choices.forEach((key, value) => print('${cyan}$key. ${value['text']}${end}'));
 
 //     // Get player input
 //     final input = stdin.readLineSync();
@@ -42,35 +46,41 @@ import 'console_colors.dart';
 //     print("----------------------------------------");
 
 //     if (choice != null && choices.containsKey(choice)) {
+//       // Update the currentRoom
 //       currentRoom = choices[choice]!['path']!;
 //     } else {
-//       print('Invalid choice. Try again.');
+//       print('${red}Invalid choice. Try again.${end}');
 //     }
 //   }
 // }
 
-
 void main() async {
   String currentRoom = EntrywayFilePath;
-  bool isIntro = true; // Handle intro text separately
-  bool displayRoomName = true; // Controls whether to show "You are now in..."
+  List<String> inventory = []; // Track player's items
+  Map<String, bool> visitedRooms = {}; // Tracks if a room has been visited
 
   while (true) {
-    // Display the room name only for main room entries
-    if (!isIntro && displayRoomName) {
-      print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
-      print("-----------------------------------------");
+    // Check if the currentRoom is a main room
+    bool isMain = isMainRoom(currentRoom);
+    bool isFirstVisit = !(visitedRooms[currentRoom] ?? false);
+
+    // Mark the room as visited
+    visitedRooms[currentRoom] = true;
+
+    // Display the room name only for main rooms
+    if (isMain) {
+      if (!isFirstVisit || currentRoom != EntrywayFilePath) {
+        print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
+        print("-----------------------------------------");
+      }
     }
 
-    // Display text and options
+    // Ensure sub-elements always show their text and options
     final choices = await displayTextWithChoices(
       currentRoom,
       Duration(milliseconds: 50),
-      true
+      isMain ? isFirstVisit : true // Main rooms follow first-visit logic; sub-elements always display text
     );
-
-    // After the intro, disable the intro flag
-    isIntro = false;
 
     if (choices.isEmpty) {
       print('No actions available. Game over.');
@@ -88,13 +98,16 @@ void main() async {
     print("----------------------------------------");
 
     if (choice != null && choices.containsKey(choice)) {
-      // Update the currentRoom and determine if it is a main room
-      final nextRoom = choices[choice]!['path']!;
-      displayRoomName = isMainRoom(nextRoom); // Update display control
-      currentRoom = nextRoom;
+      // Update the currentRoom
+      currentRoom = choices[choice]!['path']!;
     } else {
-      print('Invalid choice. Try again.');
+      print('${red}Invalid choice. Try again.${end}');
     }
   }
 }
+
+
+
+
+
 

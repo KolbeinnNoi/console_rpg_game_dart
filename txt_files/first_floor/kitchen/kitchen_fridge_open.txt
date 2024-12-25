@@ -1,0 +1,8 @@
+As you open the door, a horrible smell hits you. Inside, you see various items scattered around. 
+There are some rotten vegetables, a carton of spoiled milk, 
+and a few containers with moldy leftovers.
+Among the items, you notice something dead - a small animal, perhaps a rat, lying lifeless on one of the shelves. 
+In the back of the fridge, there is a lockbox, partially hidden behind some old jars. The stench is overwhelming, making it hard to stay near the fridge for too long.
+
+1. Inspect the lockbox -> txt_files/first_floor/kitchen/fridge_lockbox.txt
+2. Close the fridge and step away -> txt_files/first_floor/kitchen/kitchen.txt

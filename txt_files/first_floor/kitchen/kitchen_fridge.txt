@@ -1,0 +1,4 @@
+The fridge has blood splatters on it....
+
+1. Open the fridge -> txt_files/first_floor/kitchen/kitchen_fridge_open.txt
+2. Step away from the fridge -> txt_files/first_floor/kitchen/kitchen.txt

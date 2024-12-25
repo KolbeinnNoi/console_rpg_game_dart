@@ -1,3 +1,4 @@
+// just some colors to make the console text look better
 const String end = '\x1B[0m';
 const String red = '\x1B[31m';
 const String green = '\x1B[32m';

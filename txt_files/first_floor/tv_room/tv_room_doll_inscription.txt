@@ -1,0 +1,4 @@
+You take a closer look at the inscription on the doll's neck. What initially seemed like a faint pattern now becomes clearer. 
+The grooves and lines subtly form the number **14**
+
+1. Memorize the number and return to the TV room -> txt_files/first_floor/tv_room/tv_room.txt

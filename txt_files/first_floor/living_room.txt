@@ -5,6 +5,6 @@ to your right, an archway leads into what seems to be a kitchen.
 directly ahead, a pitch-dark hallway stretches into the unknown.
 
 
-1. move towards the sofa and the tv -> txt_files/first_floor/tv_room/tv_room_tv.txt
-2. enter the kitchen through the archway -> txt_files/first_floor/kitchen.txt
+1. move towards the sofa and the tv -> txt_files/first_floor/tv_room/tv_room.txt
+2. enter the kitchen through the archway -> txt_files/first_floor/kitchen/kitchen.txt
 3. go straight into the dark hallway -> txt_files/first_floor/dark_hallway.txt

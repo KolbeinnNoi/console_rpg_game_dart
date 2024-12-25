@@ -1,4 +1,5 @@
 inside the cupboard, you find a note that reads: "the hallway holds the truth." nothing else is inside.
 
-1. memorize the note and leave -> txt_files/first_floor/tv_room/tv_room_static.txt
-2. 
+1. memorize the note and leave -> txt_files/first_floor/tv_room/tv_room.txt
+
+

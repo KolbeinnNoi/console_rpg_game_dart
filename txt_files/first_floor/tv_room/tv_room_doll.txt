@@ -1,0 +1,6 @@
+The doll's cold, lifeless eyes seem to follow your every move. Its porcelain face is cracked, with faint traces of dried blood around its lips. 
+
+As you lift the doll, you notice a strange inscription on the back of its neck. It appears to be some kind of faint pattern.
+
+1. Examine the inscription more closely -> txt_files/first_floor/tv_room/tv_room_doll_inscription.txt
+2. Leave the doll where it is -> txt_files/first_floor/tv_room/tv_room.txt

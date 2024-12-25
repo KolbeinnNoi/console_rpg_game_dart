@@ -1,0 +1,8 @@
+You are now in the kitchen. The smell is disturbing almost as if something died.
+
+1. Inspect the old fridge -> txt_files/first_floor/kitchen/kitchen_fridge.txt
+2. Look at the rusty sink -> txt_files/first_floor/kitchen/kitchen_sink.txt
+3. Leave the kitchen -> txt_files/first_floor/living_room/living_room.txt
+
+
+
