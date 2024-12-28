@@ -2,5 +2,7 @@ The lockbox is old and rusted, but the mechanism on it looks sturdy. A small, fa
 
 The lock features four rotating dials, each marked with numbers from 0 to 9. The mechanism clicks faintly as you turn the dials, hinting at the need for a 4-digit code to unlock..
 
-1. Try to open the lockbox -> txt_files/first_floor/kitchen/kitchen_fridge_open.txt
+There should be clues around the house to help you open the lockbox
+
+1. Try to open the lockbox -> txt_files/first_floor/kitchen/kitchen_fridge_lockbox_open.txt
 2. Leave the lockbox and close the fridge -> txt_files/first_floor/kitchen/kitchen.txt

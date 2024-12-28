@@ -1,0 +1,5 @@
+The sink is filled with murky water. The faucet drips slowly,
+each drop echoing in the silent kitchen.
+A faint, unpleasant odor wafts up from the drain.
+
+1. Leave the sink and step back -> txt_files/first_floor/kitchen/kitchen.txt

@@ -1,9 +1,12 @@
 import 'dart:io';
 import 'dart:async';
+import 'console_colors.dart';
+import 'file_paths.dart';
 
 // This function is for making the text display with a delay which adds to the suspense
 // It also returns choices for players to choose from
 // I made it so that the player has a maximum of 3 choices for each object or room they are inspecting
+
 Future<Map<int, Map<String, String>>> displayTextWithChoices(
     String filePath, Duration delay, bool showDescription) async {
   final file = File(filePath);
@@ -14,6 +17,7 @@ Future<Map<int, Map<String, String>>> displayTextWithChoices(
     print("Error: File not found at $filePath");
     return {};
   }
+ 
  
   
   final lines = await file.readAsLines();
@@ -36,6 +40,7 @@ Future<Map<int, Map<String, String>>> displayTextWithChoices(
       sentences.add(line);
     }
   }
+
 
   // display room description only if showDescription is true
   if (showDescription) {

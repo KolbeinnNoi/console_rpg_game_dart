@@ -5,29 +5,33 @@ import 'get_room_name.dart';
 import 'console_colors.dart';
 import 'handle_lockbox_code.dart';
 
+
 // void main() async {
 //   String currentRoom = EntrywayFilePath;
-//   bool isIntro = true; // Handle intro text separately
+//   List<String> inventory = []; // Track player's items
 //   Map<String, bool> visitedRooms = {}; // Tracks if a room has been visited
 
 //   while (true) {
-//     // Check if the room has been visited before
+//     // Check if the currentRoom is a main room
+//     bool isMain = isMainRoom(currentRoom);
 //     bool isFirstVisit = !(visitedRooms[currentRoom] ?? false);
 
 //     // Mark the room as visited
 //     visitedRooms[currentRoom] = true;
 
-//     // Display the room name only for main room entries
-//     if (!isFirstVisit) {
-//       print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
-//       print("-----------------------------------------");
+//     // Display the room name only for main rooms
+//     if (isMain) {
+//       if (!isFirstVisit || currentRoom != EntrywayFilePath) {
+//         print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
+//         print("-----------------------------------------");
+//       }
 //     }
 
-//     // Display room description only on the first visit
+//     // Ensure sub-elements always show their text and options
 //     final choices = await displayTextWithChoices(
 //       currentRoom,
 //       Duration(milliseconds: 50),
-//       isFirstVisit
+//       isMain ? isFirstVisit : true // Main rooms follow first-visit logic; sub-elements always display text
 //     );
 
 //     if (choices.isEmpty) {
@@ -58,6 +62,8 @@ void main() async {
   String currentRoom = EntrywayFilePath;
   List<String> inventory = []; // Track player's items
   Map<String, bool> visitedRooms = {}; // Tracks if a room has been visited
+  bool isLockboxUnlocked = false; // Tracks if the lockbox is unlocked
+
 
   while (true) {
     // Check if the currentRoom is a main room
@@ -97,17 +103,28 @@ void main() async {
     final choice = int.tryParse(input ?? '');
     print("----------------------------------------");
 
-    if (choice != null && choices.containsKey(choice)) {
-      // Update the currentRoom
-      currentRoom = choices[choice]!['path']!;
-    } else {
-      print('${red}Invalid choice. Try again.${end}');
+if (choice != null && choices.containsKey(choice)) {
+  final selectedPath = choices[choice]!['path']!;
+
+  if (selectedPath == 'txt_files/first_floor/kitchen/kitchen_fridge_lockbox_open.txt') {
+    isLockboxUnlocked = await handleLockboxCode(selectedPath, inventory, isLockboxUnlocked);
+
+    // Redirect to the fridge if the lockbox is unlocked
+    if (isLockboxUnlocked) {
+    print('${blue} You close the fridge and step back${end}');
+       currentRoom = KitchenFilePath;
+       
     }
+  } else {
+    // Update the currentRoom for other interactions
+    currentRoom = selectedPath;
   }
+} else {
+  print('${red}Invalid choice. Try again.${end}');
 }
 
 
+}
 
-
-
+}
 
