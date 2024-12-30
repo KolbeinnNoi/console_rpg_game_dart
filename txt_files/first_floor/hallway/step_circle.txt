@@ -1,0 +1,7 @@
+You touch the **circle (●)**. The panel glows faintly, and a second set of symbols appears. You must continue the sequence.
+
+1. Touch the circle (●) again -> txt_files/first_floor/hallway/puzzle_fail.txt
+2. Touch the triangle (▲) -> txt_files/first_floor/hallway/step_triangle.txt
+3. Touch the square (■) -> txt_files/first_floor/hallway/puzzle_fail.txt
+
+

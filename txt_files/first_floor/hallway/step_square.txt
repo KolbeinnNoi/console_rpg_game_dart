@@ -1,0 +1,9 @@
+You touch the **square (■)**. The panel emits a loud hum, and the symbols on the wall begin to glow faintly.
+
+The hallway lightens up slightly, and ahead of you, a locked door becomes visible. 
+
+1. Use the key to try and open the door -> txt_files/first_floor/hallway/use_key.txt
+2. Step back and return to the hallway -> txt_files/first_floor/dark_hallway.txt
+
+
+

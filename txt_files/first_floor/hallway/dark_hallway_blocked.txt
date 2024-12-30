@@ -1,0 +1,4 @@
+As you try to step into the dark hallway, it feels as if an invisible wall is blocking your way.
+It's cold and unyielding, and no amount of force seems to help. Something tells you that you need a specific item to proceed.
+
+1. Step back to the living room -> txt_files/first_floor/living_room.txt

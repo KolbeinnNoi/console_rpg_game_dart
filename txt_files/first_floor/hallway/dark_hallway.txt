@@ -1,0 +1,13 @@
+As you step into the dark hallway, the air grows colder with every step, 
+and an unrelenting sense of dread begins to weigh on you.
+
+The dim light reveals faded symbols carved into the walls. Upon closer inspection, the symbols appear to be scattered: 
+- A **triangle (▲)** is etched on the left wall near the beginning of the hallway.
+- A **circle (●)** is faintly drawn on the floor in the middle of the hallway.
+- A **square (■)** is carved into the ceiling right above you.
+
+A faint rustling sound comes from the shadows ahead. It feels as if something is waiting, just out of sight, beyond the symbols.
+
+1. Examine the symbols more closely -> txt_files/first_floor/hallway/symbol_panel.txt
+2. Turn back to the living room -> txt_files/first_floor/living_room.txt
+

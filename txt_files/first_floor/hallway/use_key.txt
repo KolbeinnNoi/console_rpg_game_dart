@@ -1,0 +1,4 @@
+You approach the door and insert the rusty key into the lock. For a moment, nothing happens, but then the lock clicks open. The door creaks, revealing a staircase descending into darkness.
+
+1. Enter the hidden staircase -> txt_files/second_floor/staircase.txt
+2. Step back into the hallway -> txt_files/first_floor/dark_hallway.txt

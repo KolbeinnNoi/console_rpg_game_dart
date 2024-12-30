@@ -7,4 +7,4 @@ directly ahead, a pitch-dark hallway stretches into the unknown.
 
 1. move towards the sofa and the tv -> txt_files/first_floor/tv_room/tv_room.txt
 2. enter the kitchen through the archway -> txt_files/first_floor/kitchen/kitchen.txt
-3. go straight into the dark hallway -> txt_files/first_floor/dark_hallway.txt
+3. go straight into the dark hallway -> txt_files/first_floor/hallway/dark_hallway.txt

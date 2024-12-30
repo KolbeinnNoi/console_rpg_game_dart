@@ -1,0 +1,6 @@
+You touch the wrong symbol. The panel emits a sharp screech and resets itself.
+
+The symbols disappear momentarily before the initial set reappears. It seems you must start over.
+
+1. Try again -> txt_files/first_floor/hallway/symbol_panel.txt
+2. Step back and return to the hallway -> txt_files/first_floor/hallway/dark_hallway.txt

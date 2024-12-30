@@ -1,0 +1,11 @@
+The final set of doors looms before you. A faint sound of whispers fills the air. Each door bears a final set of symbols and clues:
+
+- **Door 1:** A symbol of a star. Above it reads: "The guiding light shows the path."
+- **Door 2:** A symbol of a spiral. Above it reads: "Spirals pull you deeper, never to return."
+- **Door 3:** A symbol of a sword. Above it reads: "The sharp path leaves no survivors."
+
+1. Enter Door 1 -> txt_files/second_floor/success.txt
+2. Enter Door 2 -> txt_files/second_floor/deaths/death_by_spiral.txt
+3. Enter Door 3 -> txt_files/second_floor/deaths/death_by_blade.txt
+
+

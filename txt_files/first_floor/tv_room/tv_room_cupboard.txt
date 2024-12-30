@@ -1,4 +1,6 @@
-inside the cupboard, you find a note that reads: "the hallway holds the truth." nothing else is inside.
+You find a small slip of paper inside the cupboard. Faded handwriting scrawls across the page:
+
+"The hallway holds the truth. Follow the flow: ground, walls, and sky."
 
 1. memorize the note and leave -> txt_files/first_floor/tv_room/tv_room.txt
 

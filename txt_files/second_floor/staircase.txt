@@ -1,0 +1,19 @@
+As you walk up the staircase, you notice a piece of parchment pinned to the wall. 
+The handwriting is old and faint:
+
+"Only water quenches the flames.  
+The roots of wisdom dig deep.  
+A guiding star lights the way."
+
+You carefully read the note before continuing up the stairs.
+
+At the top, you find yourself in a chamber unlike anything you've
+seen before... a vast, hollow space lined with what looks like
+polished obsidian. The walls shimmer faintly, as if alive, reflecting
+strange, distorted versions of yourself. Ahead are three doors, each
+marked with a cryptic symbol and a short phrase above it. The phrases
+might hold the key to your survival.
+
+1. Approach the doors -> txt_files/second_floor/door_sequence_1.txt
+2. Step back up the staircase -> txt_files/first_floor/hallway/dark_hallway.txt
+

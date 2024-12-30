@@ -1,0 +1,11 @@
+You approach the symbols carved into the wall. A hidden panel slides open, revealing a riddle:
+
+Three symbols are engraved: **▲, ●, ■**. You must select the symbols in the correct order to unlock the door.
+
+Remember "The Truth lies in the hallway...."
+
+1. Touch the circle (●) -> txt_files/first_floor/hallway/step_circle.txt
+2. Touch the triangle (▲) -> txt_files/first_floor/hallway/puzzle_fail.txt
+3. Touch the square (■) -> txt_files/first_floor/hallway/puzzle_fail.txt
+
+

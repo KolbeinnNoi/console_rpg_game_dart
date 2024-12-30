@@ -1,0 +1,11 @@
+You pass through the first door and find another set of three. The air feels heavier, and the stakes even higher. The doors bear new symbols:
+
+- **Door 1:** A symbol of a tree. Above it reads: "The roots of truth dig deep."
+- **Door 2:** A symbol of a clock. Above it reads: "Time’s hands may lead astray."
+- **Door 3:** A symbol of a snake. Above it reads: "Fangs hide in the quiet shadows."
+
+1. Enter Door 1 -> txt_files/second_floor/door_sequence_3.txt
+2. Enter Door 2 -> txt_files/second_floor/deaths/death_by_time.txt
+3. Enter Door 3 -> txt_files/second_floor/deaths/death_by_snakes.txt
+
+

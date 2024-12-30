@@ -1,0 +1,11 @@
+You stand before the first set of three doors. Each door bears a unique symbol, and above each is a short phrase:
+
+- **Door 1:** A symbol of a flame. Above it reads: "Flames illuminate, but they also consume."
+- **Door 2:** A symbol of a drop of water. Above it reads: "Cool waters reveal what burns cannot."
+- **Door 3:** A symbol of a mountain. Above it reads: "The higher you climb, the harder you fall."
+
+The choice is yours. Choose wisely.
+
+1. Enter Door 1 -> txt_files/second_floor/deaths/death_by_fire.txt
+2. Enter Door 2 -> txt_files/second_floor/door_sequence_2.txt
+3. Enter Door 3 -> txt_files/second_floor/deaths/death_by_fall.txt
