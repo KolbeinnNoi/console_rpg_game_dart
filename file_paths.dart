@@ -24,3 +24,11 @@ const String StepTriangleFilePath = 'txt_files/first_floor/hallway/step_triangle
 const String StepCircleFilePath = 'txt_files/first_floor/hallway/step_circle.txt';
 const String StepSquareFilePath = 'txt_files/first_floor/hallway/step_square.txt';
 const String PuzzleFailFilePath = 'txt_files/first_floor/hallway/puzzle_fail.txt';
+
+const String DeathByBladeFilePath = 'txt_files/second_floor/deaths/death_by_blade.txt';
+const String DeathByFallFilePath = 'txt_files/second_floor/deaths/death_by_fall.txt';
+const String DeathByFireFilePath = 'txt_files/second_floor/deaths/death_by_fire.txt';
+const String DeathBySnakesFilePath = 'txt_files/second_floor/deaths/death_by_snakes.txt';
+const String DeathBySpiralFilePath = 'txt_files/second_floor/deaths/death_by_spiral.txt';
+const String DeathByTimeFilePath = 'txt_files/second_floor/deaths/death_by_time.txt';
+

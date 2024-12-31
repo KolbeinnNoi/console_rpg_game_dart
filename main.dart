@@ -5,7 +5,8 @@ import 'get_room_name.dart';
 import 'console_colors.dart';
 import 'handle_lockbox_code.dart';
 import 'handle_dark_hallway.dart';
-
+import 'display_death_file.dart';
+import 'display_success_file.dart';
 
 void main() async {
   String currentRoom = EntrywayFilePath;
@@ -54,54 +55,45 @@ void main() async {
     final choice = int.tryParse(input ?? '');
     print("----------------------------------------");
 
-    // if (choice != null && choices.containsKey(choice)) {
-    //   final selectedPath = choices[choice]!['path']!;
+    if (choice != null && choices.containsKey(choice)) {
+      final selectedPath = choices[choice]!['path']!;
 
-    //   if (selectedPath ==
-    //       'txt_files/first_floor/kitchen/kitchen_fridge_lockbox_open.txt') {
-    //     isLockboxUnlocked =
-    //         await handleLockboxCode(selectedPath, inventory, isLockboxUnlocked);
+      if (currentRoom == LivingRoomFilePath) {
+        final newPath = await handleLivingRoomChoice(choice, inventory);
+        if (newPath != null) {
+          currentRoom =
+              newPath; // Set the new room based on inventory and choice
+        } else {
+          currentRoom =
+              selectedPath; // Default to the selected path for other choices
+        }
+      } else if (selectedPath == FridgeLockboxOpenFilePath) {
+        isLockboxUnlocked =
+            await handleLockboxCode(selectedPath, inventory, isLockboxUnlocked);
 
-    //     // Redirect to the fridge if the lockbox is unlocked
-    //     if (isLockboxUnlocked) {
-    //       print('${blue} You close the fridge and step back${end}');
-    //       currentRoom = KitchenFilePath;
-    //     }
-    //   } else {
-    //     // Update the currentRoom for other interactions
-    //     currentRoom = selectedPath;
-    //   }
-    // } else {
-    //   print('${red}Invalid choice. Try again.${end}');
-    // }
-
-if (choice != null && choices.containsKey(choice)) {
-  final selectedPath = choices[choice]!['path']!;
-
-  if (currentRoom == LivingRoomFilePath) {
-    final newPath = await handleLivingRoomChoice(choice, inventory);
-    if (newPath != null) {
-      currentRoom = newPath; // Set the new room based on inventory and choice
+        // Redirect to the fridge if the lockbox is unlocked
+        if (isLockboxUnlocked) {
+          print('${blue} You close the fridge and step back${end}');
+          currentRoom = KitchenFilePath;
+        }
+      } else {
+        // Update the currentRoom for other interactions
+        currentRoom = selectedPath;
+      }
     } else {
-      currentRoom = selectedPath; // Default to the selected path for other choices
+      print('${red}Invalid choice. Try again.${end}');
     }
-  } else if (selectedPath == FridgeLockboxOpenFilePath) {
-    isLockboxUnlocked =
-        await handleLockboxCode(selectedPath, inventory, isLockboxUnlocked);
 
-    // Redirect to the fridge if the lockbox is unlocked
-    if (isLockboxUnlocked) {
-      print('${blue} You close the fridge and step back${end}');
-      currentRoom = KitchenFilePath;
+    // if the current room contains death_by_, display the death file with game over in red
+    if (currentRoom.contains('death_by_')) {
+      displayDeathFile(currentRoom);
+      break;
     }
-  } else {
-    // Update the currentRoom for other interactions
-    currentRoom = selectedPath;
-  }
-} else {
-  print('${red}Invalid choice. Try again.${end}');
-}
 
-
+    // if the current room contains success, display the success file with congratulations in green
+    if (currentRoom.contains('success')) {
+      displaySuccessFile(currentRoom);
+      break;
+    }
   }
 }
