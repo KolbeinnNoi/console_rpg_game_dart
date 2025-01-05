@@ -33,7 +33,7 @@ void main() async {
     // Ensure sub-elements always show their text and options
     final choices = await displayTextWithChoices(
         currentRoom,
-        Duration(milliseconds: 0),
+        Duration(milliseconds: 3000),
         isMain
             ? isFirstVisit
             : true // Main rooms follow first-visit logic; sub-elements always display text
