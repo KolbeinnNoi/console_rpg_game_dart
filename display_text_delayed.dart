@@ -18,8 +18,7 @@ Future<Map<int, Map<String, String>>> displayTextWithChoices(
     return {};
   }
  
- 
-  
+  // Read and process lines into sentances and choices
   final lines = await file.readAsLines();
   final List<String> sentences = [];
   final Map<int, Map<String, String>> choices = {};
