@@ -9,20 +9,26 @@ import 'display_death_file.dart';
 import 'display_success_file.dart';
 
 void main() async {
-  String currentRoom = EntrywayFilePath;
-  List<String> inventory = []; // Track player's items
-  Map<String, bool> visitedRooms = {}; // Tracks if a room has been visited
-  bool isLockboxUnlocked = false; // Tracks if the lockbox is unlocked
+  String currentRoom = EntrywayFilePath; // start with the entryway txt file
+  List<String> inventory = []; // track player's items
+  Map<String, bool> visitedRooms = {}; // tracks if a room has been visited
+  bool isLockboxUnlocked = false; // tracks if the lockbox is unlocked
 
   while (true) {
-    // Check if the currentRoom is a main room
+// main game loop: continue untill the player wins or loses
+
+    // determine the current room's state
+    // check if it's a main room
+    // check if it's the first time visiting
     bool isMain = isMainRoom(currentRoom);
     bool isFirstVisit = !(visitedRooms[currentRoom] ?? false);
 
-    // Mark the room as visited
+    // mark the room as visited
     visitedRooms[currentRoom] = true;
 
-    // Display the room name only for main rooms
+    // display the name of the room you are in for main rooms only
+    // only display the description of a main room on the first visit
+    // always dissplay the description of a sub room
     if (isMain) {
       if (!isFirstVisit || currentRoom != EntrywayFilePath) {
         print('${blue}\nYou are now in ${getRoomName(currentRoom)}.${end}');
@@ -30,13 +36,13 @@ void main() async {
       }
     }
 
-    // Ensure sub-elements always show their text and options
+    // ensure sub-elements always show their text and options
     final choices = await displayTextWithChoices(
         currentRoom,
-        Duration(milliseconds: 3000),
+        Duration(milliseconds: 0),
         isMain
             ? isFirstVisit
-            : true // Main rooms follow first-visit logic; sub-elements always display text
+            : true // main rooms follow first-visit logic; sub-elements always display text
         );
 
     if (choices.isEmpty) {
@@ -44,13 +50,13 @@ void main() async {
       break;
     }
 
-    // Display choices
+    // display choices available in the current room
     print('${yellow}\nWhat do you want to do?${end}');
     print("----------------------------------------");
     choices
         .forEach((key, value) => print('${cyan}$key. ${value['text']}${end}'));
 
-    // Get player input
+    // get player input
     final input = stdin.readLineSync();
     final choice = int.tryParse(input ?? '');
     print("----------------------------------------");
@@ -59,28 +65,31 @@ void main() async {
       final selectedPath = choices[choice]!['path']!;
 
       if (currentRoom == LivingRoomFilePath) {
+        // handle logic for the living room
         final newPath = await handleLivingRoomChoice(choice, inventory);
         if (newPath != null) {
           currentRoom =
-              newPath; // Set the new room based on inventory and choice
+              newPath; // set the new room based on inventory and choice
         } else {
           currentRoom =
-              selectedPath; // Default to the selected path for other choices
+              selectedPath; // default to the selected path for other choices
         }
       } else if (selectedPath == FridgeLockboxOpenFilePath) {
+        // logic for unlocking the fridge lockbox
         isLockboxUnlocked =
             await handleLockboxCode(selectedPath, inventory, isLockboxUnlocked);
 
-        // Redirect to the fridge if the lockbox is unlocked
+        // redirect to the fridge if the lockbox is unlocked
         if (isLockboxUnlocked) {
           print('${blue} You close the fridge and step back${end}');
-          currentRoom = KitchenFilePath;
+          currentRoom = KitchenFilePath; // redirect to the kitchen
         }
       } else {
-        // Update the currentRoom for other interactions
+        // update the currentRoom for other interactions
         currentRoom = selectedPath;
       }
     } else {
+      // display this message if the player enters an invalid choice
       print('${red}Invalid choice. Try again.${end}');
     }
 

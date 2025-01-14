@@ -12,13 +12,16 @@ Future<Map<int, Map<String, String>>> displayTextWithChoices(
   final file = File(filePath);
 
 
-  // This checks if the file exists and if it doesn't it prints an error message
+  // this checks if the file exists and if it doesn't it prints an error message
   if (!file.existsSync()) {
     print("Error: File not found at $filePath");
     return {};
   }
  
-  // Read and process lines into sentances and choices
+// read the file line by line and separate sentences and choices
+// sentences are added to the sentences list as descriptive text
+// choices start with 1., 2., or 3. and are stored in a map with their number as the key
+// each choice has a text description and a file path
   final lines = await file.readAsLines();
   final List<String> sentences = [];
   final Map<int, Map<String, String>> choices = {};
@@ -40,8 +43,9 @@ Future<Map<int, Map<String, String>>> displayTextWithChoices(
     }
   }
 
-
-  // display room description only if showDescription is true
+// display room description only if showDescription is true
+// this displays the room description only if it is the first time entering the room 
+// or if the room is a sub room the description is always shown 
   if (showDescription) {
     for (var sentence in sentences) {
       if (sentence.trim().isNotEmpty) {

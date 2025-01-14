@@ -1,3 +1,5 @@
+// file paths for the text files in the game
+
 const String IntroFilePath = 'txt_files/intro.txt';
 const String EntrywayFilePath = 'txt_files/first_floor/entryway/entryway.txt';
 const String ScratchMarksFilePath = 'txt_files/first_floor/entryway/scratch_marks.txt';

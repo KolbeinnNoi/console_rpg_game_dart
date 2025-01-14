@@ -2,12 +2,13 @@
 import 'file_paths.dart';
 
 Future<String> handleDarkHallwayInteraction(List<String> inventory) async {
-  // Check if the player has the Rusty Key
+  // check if the player has the Rusty Key
+  // if they do they can enter the dark hallway otherwise they can't enter and a message will be displayed
   if (inventory.contains("Rusty Key")) {
-    // Return the normal dark hallway text file when the key is in inventory
+    // return the normal dark hallway text file when the key is in inventory
     return DarkHallwayFilePath;
   } else {
-    // Redirect to the blocked description if the key is missing
+    // redirect to the blocked message description if the key is missing
     return DarkHallwayBlockedFilePath;
   }
 }
