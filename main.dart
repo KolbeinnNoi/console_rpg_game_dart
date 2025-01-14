@@ -14,9 +14,8 @@ void main() async {
   Map<String, bool> visitedRooms = {}; // tracks if a room has been visited
   bool isLockboxUnlocked = false; // tracks if the lockbox is unlocked
 
+  // main game loop: continue untill the player wins or loses
   while (true) {
-// main game loop: continue untill the player wins or loses
-
     // determine the current room's state
     // check if it's a main room
     // check if it's the first time visiting
@@ -39,12 +38,13 @@ void main() async {
     // ensure sub-elements always show their text and options
     final choices = await displayTextWithChoices(
         currentRoom,
-        Duration(milliseconds: 0),
+        Duration(milliseconds: 2000),
         isMain
             ? isFirstVisit
             : true // main rooms follow first-visit logic; sub-elements always display text
         );
 
+    // if there are no choices, the game is over, this is just a precaution to if something goes wrong
     if (choices.isEmpty) {
       print('No actions available. Game over.');
       break;
